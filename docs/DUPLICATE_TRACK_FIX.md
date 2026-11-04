@@ -1,0 +1,11 @@
+Duplicate tracking and classification presentation repair
+
+Near-identical YOLO proposals (IoU >=0.80 with close centers/compatible sizes) are deduplicated before association. New IDs are deferred when an unmatched detection occupies an existing footprint (IoU >=0.45; center offset <=30% of smaller width/height; each size ratio >=0.55). Deferral does not force a statistically rejected Kalman correction. Old tracks expire through the existing lifecycle. Diagnostic events distinguish duplicate_detector_proposal and duplicate_track_birth_deferred. Adjacent overlapping tracks are not globally merged or hidden.
+
+ConvNeXt output now includes all class probabilities. Temporal accumulation retains runner-up evidence instead of winner-only votes. Close Frigate/Destroyer decisions display both candidates and uncertainty. Fewer than three observations, top score share <0.55, or margin <0.25 are uncertain. Strong results are labelled model estimates. Video overlay uses score share, not certainty. Existing raw label fields remain available. Checkpoint class_names determine label ordering, with underscores converted to display spaces. Actual checkpoint ordering matched the old order; no mapping error was found.
+
+Modified: tracking/association.py, tracking/kalman_tracker.py, models/classifier.py, pipeline/orchestrator.py, tracking/telemetry.py, frontend/src/api/types.ts, frontend/src/features/tracking/index.tsx. Added tests/test_duplicate_and_classification.py.
+
+Limitations: spatial guards cannot prove vessel identity and may defer a new vessel almost directly overlapping an existing vessel. Completely overlapping ships require appearance/depth cues. Previously exported videos retain old annotations; restart the backend and process a fresh video. This repair does not retrain weights or guarantee Frigate/Destroyer accuracy in difficult frontal/out-of-domain views. Confident wrong classifier predictions can still occur and are explicitly model estimates. Exact screenshot source/frame was not provided, so that precise frame was not replayed.
+
+Validation: 47 tracking/Kalman/continuity/Groq tests passed; 5 new duplicate/classification tests and 3 real API integration tests passed (55 total). Real cloud-video upload retained two IDs with prediction/recovery and served a playable video. Frontend production build passed.

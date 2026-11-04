@@ -1,0 +1,7 @@
+path: F:/OATrack-VLM_complete_project/OATrack-VLM/data/vhrv/vhrv
+train: train_subset.txt
+val: images/val
+test: images/test
+
+nc: 1
+names: ['vessel']

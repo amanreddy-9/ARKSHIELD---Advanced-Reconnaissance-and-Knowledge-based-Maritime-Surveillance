@@ -1,0 +1,37 @@
+# ARKSHIELD Python Core Dependencies
+
+# Backend & Web Framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+python-dotenv>=1.0.0
+requests>=2.31.0
+
+# Scientific Computing & Computer Vision
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+pillow>=10.0.0
+opencv-python>=4.8.0
+scikit-learn>=1.3.0
+
+# Deep Learning Frameworks
+torch>=2.1.0
+torchvision>=0.16.0
+ultralytics>=8.3.0
+
+# Tracking & State Estimation
+filterpy>=1.4.5
+
+# Vision-Language Models & API Guards
+groq>=0.11.0
+transformers>=4.40.0
+peft>=0.10.0
+
+# Reinforcement Learning & Adaptive Compute
+gymnasium>=0.29.0
+stable-baselines3>=2.2.0
+
+# Configuration & Testing
+pyyaml>=6.0
+pytest>=8.0.0

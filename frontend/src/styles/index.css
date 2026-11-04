@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import './theme.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  html {
+    @apply overflow-x-hidden font-sans;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  body {
+    @apply min-h-svh w-full bg-background text-foreground antialiased;
+  }
+
+  code, pre, .font-mono, .telemetry-val {
+    font-family: var(--font-mono), monospace;
+  }
+
+  /* Override Radix scroll locking for sticky headers */
+  body[data-scroll-locked] {
+    overflow: unset !important;
+  }
+
+  /* Cursor pointer for buttons */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@utility no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Maritime Surveillance Tactical HUD Styles */
+.hud-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(13, 27, 42, 0.85);
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-family: var(--font-mono), monospace;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hud-badge-cyan {
+  background: rgba(22, 184, 196, 0.12);
+  color: #16b8c4;
+  border: 1px solid rgba(22, 184, 196, 0.35);
+}
+
+.hud-badge-green {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.hud-badge-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.hud-badge-red {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.hud-badge-blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+/* Keep the workspace quiet and readable. */
+.maritime-workspace { background: var(--background); }
+
+
+
+/* Surveillance surfaces: bright controls, calm navy panels, semantic status colors. */
+.dark body { background: #080f18; }
+.dark main { background-image: radial-gradient(ellipse at top right, #16374b38, transparent 65%); }
+.dark .header-fixed { background: #0b1521ed; border-bottom: 1px solid #25374a; backdrop-filter: blur(12px); }
+.dark [data-slot="card"] { background: linear-gradient(135deg, #132234, #101c2a); border-color: #2a3d52; box-shadow: 0 5px 20px #00000024; }
+.dark [data-slot="card-header"] { border-bottom-color: #2a3d5280; }
+.dark [data-slot="select-trigger"], .dark input:not([type="range"]):not([type="checkbox"]):not([type="radio"]) { background-color: #0c1725; }
+.dark [data-sidebar="menu-button"][data-active="true"] { border-left: 3px solid #57c9db; background: #183344; color: #a5e8f0; }
+.dark [data-slot="button"][data-variant="default"] { box-shadow: 0 3px 12px #57c9db20; }
+.dark .hud-badge-cyan, .dark .hud-badge-blue { background: #57c9db12; color: #86d6e4; border-color: #57c9db38; }
+.dark .hud-badge-green { background: #70c5a412; color: #8ed4b8; border-color: #70c5a438; }
+.dark .hud-badge-amber { background: #e5b76b12; color: #e5c18a; border-color: #e5b76b38; }
+.dark .text-emerald-400, .dark .text-teal-400 { color: #85cfb4; }
+.dark .text-amber-400 { color: #e5bf83; }

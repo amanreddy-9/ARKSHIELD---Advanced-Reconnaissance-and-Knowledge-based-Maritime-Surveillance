@@ -1,0 +1,114 @@
+:root {
+  --radius: 0.5rem;
+
+  /* Maritime Command Light Theme (Fallback) */
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #0f172a;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --accent: #e0f2fe;
+  --accent-foreground: #0369a1;
+  --destructive: #ef4444;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #0284c7;
+  --chart-1: #0284c7;
+  --chart-2: #10b981;
+  --chart-3: #f59e0b;
+  --chart-4: #6366f1;
+  --chart-5: #ec4899;
+
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #0284c7;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #334155;
+  --sidebar-ring: #0284c7;
+}
+
+/* OATrack-VLM Maritime Command Dark Theme (Default) */
+.dark {
+  --background: #080f18;
+  --foreground: #e8eff6;
+  --card: #111e2d;
+  --card-foreground: #e8eff6;
+  --popover: #142335;
+  --popover-foreground: #e8eff6;
+  --primary: #57c9db;
+  --primary-foreground: #06222b;
+  --secondary: #1a2c40;
+  --secondary-foreground: #d8e4f0;
+  --muted: #172536;
+  --muted-foreground: #9aaec3;
+  --accent: #193849;
+  --accent-foreground: #8bdfec;
+  --destructive: #f47178;
+  --border: #2a3d52;
+  --input: #30465d;
+  --ring: #57c9db;
+  --chart-1: #57c9db;
+  --chart-2: #70c5a4;
+  --chart-3: #e5b76b;
+  --chart-4: #7da5e2;
+  --chart-5: #a5a6d8;
+  --sidebar: #0b1521;
+  --sidebar-foreground: #bdccdc;
+  --sidebar-primary: #57c9db;
+  --sidebar-primary-foreground: #06222b;
+  --sidebar-accent: #183344;
+  --sidebar-accent-foreground: #93e0eb;
+  --sidebar-border: #25374a;
+  --sidebar-ring: #57c9db;
+}
+
+@theme inline {
+  --font-inter: 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'Segoe UI', Arial, sans-serif;
+  --font-sans: 'Segoe UI', Arial, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}

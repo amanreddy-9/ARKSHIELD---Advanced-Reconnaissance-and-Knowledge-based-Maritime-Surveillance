@@ -1,0 +1,11 @@
+satellite:
+  detector_weights: models/weights/vhrv_best.pt
+drone:
+  detector_weights: models/weights/vhrv_best.pt
+tracking:
+  max_age: 20
+  distance_threshold: 80
+rl:
+  modes: [lightweight, standard, heavy]
+vlm:
+  provider: groq
